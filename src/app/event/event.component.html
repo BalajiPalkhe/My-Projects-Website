@@ -1,0 +1,203 @@
+<div class="container">
+    <div class="col1">
+        <h4 id="col1head">Choose Option</h4>
+        <hr />
+        <button (click)="clickO1()" style="color: blueviolet">Click Event</button><br />
+        <button (click)="dblclickO()" style="color: blueviolet">
+            Double-click Event</button><br />
+        <button (click)="mouse()" (dblclick)="dmouse()" style="color: blueviolet">
+            Mouse Events</button><br />
+        <div *ngIf="m == 1">
+            <button (click)="mousedown()">Mosedown Event</button><br />
+            <button (click)="mouseenter()">Mouse-enter Event</button><br />
+            <button (click)="mouseleave()">Mouse-leave Event</button><br />
+            <button (click)="mousemove()">Mouse-move Event</button><br />
+        </div>
+        <button (click)="keyboard()" (dblclick)="dkeyboard()" style="color: blueviolet">
+            Keyboard Events
+        </button>
+        <div *ngIf="m == 2">
+            <button (click)="keypress()">KeyPress Event</button><br />
+            <button (click)="keydown()">Keydown Event</button><br />
+            <button (click)="keyup()">Keyup Event</button><br />
+        </div>
+    </div>
+    <div class="col2">
+        <div class="in">
+            <h3>Demonstration ({{head}})</h3>
+            <div>   
+                <!-- Click event -->
+
+                <button *ngIf="clickO == 1" (click)="click()">Click me</button>
+                <button *ngIf="clickO == 1" (click)="reset()">Reset Count</button>
+
+                <h4 *ngIf="clickO == 1">Count: {{ count }}</h4>
+                <!-- Click event -->
+                <!--Double Click event -->
+
+                <button *ngIf="clickO == 2" (dblclick)="click()">
+                    Double-Click me
+                </button>
+                <button *ngIf="clickO == 2" (click)="reset()">Reset Count</button>
+
+                <h4 *ngIf="clickO == 2">Count: {{ count }}</h4>
+                <!-- Double-click Event -->
+
+                <!-- Mousedown -->
+
+                <div (mousedown)="click()" *ngIf="clickO == 3" style="
+            background-color: red;
+            width: 32%;
+            margin-left: 34.5%;
+            height: 50px;
+          "></div>
+
+                <button *ngIf="clickO == 3" (click)="reset()">Reset Count</button>
+
+                <h4 *ngIf="clickO == 3">Count: {{ count }}</h4>
+                <!-- Mousedown -->
+
+                <!-- Mouse-enter -->
+                <div (mouseenter)="click()" *ngIf="clickO == 4" style="
+            background-color: red;
+            width: 32%;
+            height: 50px;
+            margin-left: 34.5%;
+          "></div>
+
+                <button *ngIf="clickO == 4" (click)="reset()">Reset Count</button>
+
+                <h4 *ngIf="clickO == 4">Count: {{ count }}</h4>
+                <!-- Mouse-enter -->
+
+                <!-- Mouse-leave -->
+                <div (mouseleave)="click()" *ngIf="clickO == 5" style="
+                                background-color: red;
+                                width: 32%;
+                                height: 50px;
+                                margin-left: 34.5%;
+                              "></div>
+
+                <button *ngIf="clickO == 5" (click)="reset()">Reset Count</button>
+
+                <h4 *ngIf="clickO == 5">Count: {{ count }}</h4>
+                <!-- Mouse-leave -->
+
+                <!-- Mousemove -->
+                <div (mousemove)="click()" *ngIf="clickO == 6" style="
+                            background-color: red;
+                            width: 32%;
+                            height: 50px;
+                            margin-left: 34.5%;
+                          "></div>
+
+                <button *ngIf="clickO == 6" (click)="reset()">Reset Count</button>
+
+                <h4 *ngIf="clickO == 6">Count: {{ count }}</h4>
+                <!-- Mousemove -->
+
+
+
+                <!-- Keyboard Events -->
+                <!-- Keypress -->
+
+                <textarea *ngIf="clickO==7" rows="4" cols="25" style="border: 1px solid black;"
+                    (keypress)="key($event)"></textarea><br>
+
+                <button *ngIf="clickO == 7" (click)="resetkey()">Reset Count</button>
+
+                <h4 *ngIf="clickO == 7">Pressed Characters: {{ keytext }}</h4>
+                <!-- keypress -->
+
+                <!-- keydown event -->
+                <textarea *ngIf="clickO==8" rows="4" cols="25" style="border: 1px solid black;"
+                    (keydown)="key($event)"></textarea>
+
+                <button *ngIf="clickO == 8" (click)="resetkey()">Reset Count</button>
+
+                <h4 *ngIf="clickO == 8">Pressed Characters: {{ keytext }}</h4>
+                <!-- keydown event -->
+
+                <!-- keyUp event -->
+                <textarea *ngIf="clickO==9" rows="4" cols="25" style="border: 1px solid black;"
+                    (keyup)="key($event)"></textarea>
+
+                <button *ngIf="clickO == 9" (click)="resetkey()">Reset Count</button>
+
+                <h4 *ngIf="clickO == 9">Pressed Characters: {{ keytext }}</h4>
+                <!-- keyup event -->
+
+
+            </div>
+        </div>
+
+        <div class="desc">
+            <h2>Description</h2>
+            <!-- Click event -->
+            <h4 *ngIf="clickO == 1">
+                <span style="color: blue">Click</span> on the "<span style="text-decoration: underline">Click me</span>"
+                button and count will be displayed.
+            </h4>
+            <!-- Click Event -->
+
+            <!-- Double-click Event -->
+            <h4 *ngIf="clickO == 2">
+                <span style="color: blue">Double-Click</span> on the "<span style="text-decoration: underline">Click
+                    me</span>" button and count will be displayed.
+            </h4>
+
+            <!-- Double-click Event -->
+            <!-- mousedown -->
+            <h4 *ngIf="clickO == 3">
+                <span style="color: blue">Click</span> on the "<span style="text-decoration: underline; color: red">Red
+                    Portion</span>" anywhere and count will be displayed.
+            </h4>
+            <!-- mousedown -->
+
+            <!-- mouseenter -->
+            <h4 *ngIf="clickO == 4">Move
+                <span style="color: blue">Cursor</span> on the "<span style="text-decoration: underline; color: red">Red
+                    Portion</span>" anywhere and count will be displayed.
+            </h4>
+            <!-- mouseenter -->
+
+            <!-- mouseleave -->
+            <h4 *ngIf="clickO == 5">Move
+                <span style="color: blue">Cursor</span> from"<span style="text-decoration: underline; color: red">Red
+                    Portion</span>" to outside anywhere and count will be displayed.
+            </h4>
+            <!-- mouseleave -->
+
+            <!-- mousemove -->
+            <h4 *ngIf="clickO == 6">Move
+                <span style="color: blue">Cursor</span> on the "<span style="text-decoration: underline; color: red">Red
+                    Portion</span>" anywhere and count will be displayed.
+            </h4>
+            <!-- mousemove -->
+
+
+            <!-- keypress -->
+            <h4 *ngIf="clickO == 7">If you Pressed any key on the keyboard it will be shown on the Pressed Characters
+                tab.
+            </h4>
+            <!-- keypress -->
+
+            <!-- keydown -->
+            <h4 *ngIf="clickO == 8">If you press Down any key on the keyboard it will be shown on the Pressed Characters
+                tab.
+            </h4>
+            <!-- keydown -->
+
+            <!-- keypress -->
+            <h4 *ngIf="clickO == 9">If you Pressed any key on the keyboard and leave then it will be shown on the
+                Pressed Characters tab.
+            </h4>
+            <!-- keypress -->
+
+            <h4 *ngIf="count >= 1">
+                To reset the count click on "
+                <span style="text-decoration: underline"> Reset Count</span>" button.
+            </h4>
+        </div>
+    </div>
+</div>

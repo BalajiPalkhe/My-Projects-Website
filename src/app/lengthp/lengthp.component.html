@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="col1">
+    <h4 id="col1head">Choose Option</h4>
+    <hr />
+    <button (click)="mmtom()" (keyup.enter)="mmtomcon()">millimeter <==> Meter</button><br />
+    <button (click)="mmtocm()">millimeter <==> centimeter</button><br />
+    <button (click)="mmtokm()">millimeter <==> kilometer</button><br />
+
+    <button (click)="cmtomm()">centiimeter <==> millimeter</button><br />
+    <button (click)="cmtom()">centiimeter <==> Meter</button><br />
+    <button (click)="cmtokm()">centiimeter <==> kilometer</button><br />
+
+    <button (click)="mtomm()">meter <==> millimeter</button><br />
+    <button (click)="mtocm()">meter <==> centimeter</button><br />
+    <button (click)="mtokm()">meter <==> kilometer</button><br />
+
+    <button (click)="kmtomm()">kilometer <==> millimeter</button><br />
+    <button (click)="kmtom()">kilometer <==> Meter</button><br />
+    <button (click)="kmtocm()">kilometer <==> centimeter</button><br />
+  </div>
+  <div class="col2" *ngIf="col2==1">
+    <div class="in">
+      <h3>{{head}}</h3>
+      <div>
+        <input type="number" id="in1" placeholder="Enter Value" [(ngModel)]="val1" style="text-align: center;">
+
+
+        <button *ngIf="con==1" style="margin-left: 14px ; font-size: 20px;text-align: center;" (click)="mmtomcon()">Convert</button>
+
+
+        <button *ngIf="con==2" (click)="mmtocmcon()" style="margin-left: 14px ; font-size: 20px;text-align: center;">Convert</button>
+
+
+        <button *ngIf="con==3" (click)="mmtokmcon()" style="margin-left: 14px ; font-size: 20px; text-align: center;">Convert</button>
+
+
+        <button *ngIf="con==4" (click)="cmtommcon()" style="margin-left: 14px ; font-size: 20px; text-align: center;">Convert</button>
+
+
+
+        <button *ngIf="con==5" (click)="cmtokmcon()" style="margin-left: 14px ; font-size: 20px; text-align: center;">Convert</button>
+
+
+        <button *ngIf="con==6" (click)="cmtomcon()" style="margin-left: 14px ; font-size: 20px; text-align: center;">Convert</button>
+
+        <button *ngIf="con==7" (click)="mtommcon()" style="margin-left: 14px ; font-size: 20px; text-align: center;">Convert</button>
+
+        <button *ngIf="con==8" (click)="mtocmcon()" style="margin-left: 14px ; font-size: 20px; text-align: center;">Convert</button>
+
+
+        <button *ngIf="con==9" (click)="mtokmcon()" style="margin-left: 14px ; font-size: 20px; text-align: center;">Convert</button>
+
+
+        <button *ngIf="con==10" (click)="kmtommcon()" style="margin-left: 14px ; font-size: 20px; text-align: center;">Convert</button>
+
+
+        <button *ngIf="con==11" (click)="kmtomcon()" style="margin-left: 14px ; font-size: 20px; text-align: center;">Convert</button>
+
+        <button *ngIf="con==12" (click)="kmtocmcon()" style="margin-left: 14px ; font-size: 20px; text-align: center;">Convert</button>
+
+
+
+        <input type="number" id="in1" [(ngModel)]="val2" disabled="" style="background-color: white;border: 1px solid black; color: black; text-align: center;"><br>
+        <!-- <label for="" class="l">{{h1}}</label> -->
+        <!-- <label for="" class="l">{{h2}}</label> -->
+
+      </div>
+    </div>
+
+    <div class="desc"> 
+      <h2>Description</h2>
+      <h3 style="color: blue;">{{desc}}</h3>
+    
+    </div>
+  </div>
+
+</div>

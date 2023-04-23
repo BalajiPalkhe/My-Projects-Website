@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: large;
+  flex-wrap: wrap;
+}
+.col1 {
+  width: 20%;
+  border: 2px black solid;
+}
+.col2 {
+  width: 75%;
+  margin-left: 4px;
+  height: 100px;
+}
+
+.in {
+  height: 15rem;
+  border: 2px black solid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.desc {
+  height: 153px;
+  /* border: 2px black solid; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  margin-top: 4px;
+}

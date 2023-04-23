@@ -1,0 +1,30 @@
+Enter any String Input: <input type="text" [(ngModel)]="input"><br><br>
+<div>
+    <button (click)="lengthOf()">Length of String</button>
+    <button (click)="second()">Check Equality</button>
+    <button (click)="indexm()">Index Of Method</button>
+    <button (click)="indexm1()">Last Index Of Method</button>
+    <button (click)="maxF()">Max Frequency of Character</button>
+    <button (click)="lowerCase()">To LowerCase</button>
+    <button (click)="upperCase()">To UpperCase</button>
+</div>
+<br>
+<div *ngIf="s==1">
+
+    Enter Another String to check equality: <input type="text" [(ngModel)]="s2">
+    <button (click)="checkEquality()">Check</button>
+</div>  
+<div *ngIf="s==2">
+
+    Enter Another String to check index of: <input type="text" [(ngModel)]="s2">
+    <button (click)="indexOf()">Check</button>
+</div>
+<div *ngIf="s==3">
+
+    Enter Another String to check Last index of: <input type="text" [(ngModel)]="s2">
+    <button (click)="lastIndexOf()">Check</button>
+</div><br>
+<div style="text-align: center;">
+
+    <textarea disabled style="font-size:3rem; text-align: center;width: 90%;height: 22rem;color: black; ">{{result}}</textarea>
+</div>
