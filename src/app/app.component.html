@@ -1,36 +1,51 @@
-
-<h1 style="text-align: center;">My Projects Website</h1><hr>
-<div *ngIf="log==0">
-
-  Username: <input type="text" placeholder="username" #username> <br><br>
-  Password: <input type="password" placeholder="password" #pass>
-  <button (click)="validate(username.value,pass.value)">Login</button>
-  <h4 style="color: red;">{{error}}</h4>
-
-</div>
-
-
-
-<div *ngIf="log==1">
-  <h3>Hello Guest, Choose any of the following Option to visit</h3>
-
-  <button (click)="showString()">String Project</button>
-  <button (click)="lenp()">Length Converter</button>
-  <button (click)="eventOpen()">Angular Event Demonstration</button>
-  <a href='https://github.com/BalajiPalkhe/My-Projects-Website' target="_blank">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  
+  
+  <h1 style="text-align: center;">My Projects Website</h1><hr>
+  <div *ngIf="log==0">
+  
+    Username: <input type="text" placeholder="username" #username> <br><br>
+    Password: <input type="password" placeholder="password" #pass>
+    <button (click)="validate(username.value,pass.value)">Login</button>
+    <h4 style="color: red;">{{error}}</h4>
+  
+  </div>
+  
+  
+  
+  <div *ngIf="log==1">
+    <h3>Hello Guest, Choose any of the following Option to visit</h3>
+  
+    <button (click)="showString()">String Project</button>
+    <button (click)="lenp()">Length Converter</button>
+    <button (click)="eventOpen()">Angular Event Demonstration</button>
+    <a href='https://github.com/BalajiPalkhe/My-Projects-Website' target="_blank">
+      <button >
+          View Project on GitHub
+      </button>
+  </a>  
+  <a href='https://github.com/BalajiPalkhe' target="_blank">
     <button >
         View Project on GitHub
     </button>
-</a>  
-<a href='https://github.com/BalajiPalkhe' target="_blank">
-  <button >
-      View Project on GitHub
-  </button>
-</a>  
-  <button (click)="logout()">Logout</button>
+  </a>  
+    <button (click)="logout()">Logout</button>
+  
+  </div><br><br>
+  
+  <app-stringp *ngIf="s==1">hello</app-stringp>
+  <app-lengthp *ngIf="s==2"></app-lengthp>
+  <app-event *ngIf="s==3"></app-event>
+</body>
+</html>
 
-</div><br><br>
 
-<app-stringp *ngIf="s==1">hello</app-stringp>
-<app-lengthp *ngIf="s==2"></app-lengthp>
-<app-event *ngIf="s==3"></app-event>
